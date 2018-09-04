@@ -1,4 +1,5 @@
-﻿#include "SDL.h"
+﻿#include <SDL.h>
+
 #include "game.h"
 #include "graphics.h"
 #include "input.h"
@@ -26,6 +27,8 @@ void Game::gameLoop()
 	Graphics graphics;
 	Input input;
 	SDL_Event event;
+
+	this->_player = Sprite(graphics, "Content/Sprites/MyChar.png", 0, 0, 16, 16, 100, 100);
 
 	int  LastUpdateTime = SDL_GetTicks();
 	while (true)
@@ -59,12 +62,17 @@ void Game::gameLoop()
 		int ElapseTime = CurrentTimeMS - LastUpdateTime;
 		this->update(std::min(ElapseTime, MaxFrameTime));
 		LastUpdateTime = CurrentTimeMS;
+
+		this->draw(graphics);
 	}
 }
 
 void Game::draw(Graphics &graphics)
 {
+	graphics.clear();
 
+	this->_player.draw(graphics, 100, 100);
+	graphics.flip();
 }
 
 void Game::update(float elapsedTime)
