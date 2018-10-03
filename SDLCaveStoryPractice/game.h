@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "sprite.h"
+#include "animationSprite.h"
 
 class Graphics;
 
@@ -15,7 +15,7 @@ private:
 	void draw(Graphics &graphics);
 	void update(float elapsedTime);
 
-	Sprite _player;
+	AnimationSprite _player;
 };
 
 #endif

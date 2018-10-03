@@ -69,14 +69,21 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\SDL2_image-2.0.3\include;C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\lib\x64;C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\SDL2_image-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\SDL2_image-2.0.3\include;C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\lib\x64;C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\SDL2_image-2.0.3\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDLCaveStoryPractice\SDLCaveStoryPractice\;C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -90,7 +97,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDLCaveStoryPractice\SDLCaveStoryPractice\;C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\Users\eljap\Documents\Trabajos\Unity\SDLProject\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -127,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="animationSprite.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="input.cpp" />
@@ -134,6 +142,7 @@
     <ClCompile Include="sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="animationSprite.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="graphics.h" />
