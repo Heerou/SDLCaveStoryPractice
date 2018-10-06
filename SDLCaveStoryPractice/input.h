@@ -13,7 +13,7 @@ public:
 
 	bool wasKeyPressed(SDL_Scancode key);
 	bool wasKeyReleased(SDL_Scancode key);
-	bool keyHold(SDL_Scancode key);
+	bool isKeyHeld(SDL_Scancode key);
 
 private:
 	std::map<SDL_Scancode, bool> _pressedKeys;

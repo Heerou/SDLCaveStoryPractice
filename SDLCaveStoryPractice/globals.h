@@ -9,6 +9,14 @@ namespace globals
 	const float SpriteScale = 2.0f;
 }
 
+enum Direction
+{
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN
+};
+
 struct Vector2
 {
 	int x, y;
