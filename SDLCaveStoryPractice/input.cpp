@@ -11,14 +11,14 @@ void Input::beginNewFrame()
 void Input::keyDownEvent(const SDL_Event& event)
 {
 	this->_pressedKeys[event.key.keysym.scancode] = true;
-	this->_releasedKeys[event.key.keysym.scancode] = true;
+	this->_heldKeys[event.key.keysym.scancode] = true;
 }
 
 //When the key released
 void Input::keyUpEvent(const SDL_Event& event)
 {
 	this->_releasedKeys[event.key.keysym.scancode] = true;
-	this->_releasedKeys[event.key.keysym.scancode] = false;
+	this->_heldKeys[event.key.keysym.scancode] = false;
 }
 
 //Checks if the keys was pressed in the current frame
